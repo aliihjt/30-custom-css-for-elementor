@@ -1,0 +1,349 @@
+/*
+#1 Sticky Header with Shadow
+Adds a smooth shadow on scroll to sticky headers for better visibility.
+*/
+selector.elementor-sticky--effects {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+selector:not(.elementor-sticky--effects) {
+  box-shadow: none;
+}
+
+/*
+#2 Gradient Button Hover
+Creates animated gradient transitions on Elementor buttons on hover.
+*/
+selector .elementor-button {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  transition: background-position 0.5s;
+  background-size: 200% auto;
+}
+selector .elementor-button:hover {
+  background-position: right center;
+}
+
+/*
+#3 Floating WhatsApp Button
+Adds a floating WhatsApp icon button to the bottom-right corner.
+*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*
+#4 Animated Underline on Hover
+Stylish underline animation effect for menu or anchor links.
+*/
+selector a {
+  position: relative;
+}
+selector a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f44336;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+selector a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ...previous snippets... */
+
+/*
+#14 Border Reveal Animation
+On hover, borders animate in from edges.
+*/
+selector {
+  position: relative;
+}
+selector::before,
+selector::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #f44336;
+  transition: all 0.3s ease;
+}
+selector::before {
+  top: 0;
+  left: 0;
+}
+selector::after {
+  bottom: 0;
+  right: 0;
+}
+selector:hover::before,
+selector:hover::after {
+  width: 100%;
+}
+
+/*
+#15 Typewriter Text Effect
+Simulates typewriter text animation for headings.
+*/
+selector {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #f44336;
+  animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/*
+#16 3D Button Press Effect
+Makes buttons appear 3D and respond to clicks.
+*/
+selector .elementor-button {
+  box-shadow: 0 5px 0 #c62828;
+  transition: all 0.1s ease-in-out;
+}
+selector .elementor-button:active {
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+/*
+#17 Loading Spinner Overlay
+Fullscreen loading overlay with a CSS spinner.
+*/
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-overlay::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f44336;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/*
+#18 Hover Image Swap
+Swaps between two images on hover without JavaScript.
+*/
+.image-swap {
+  position: relative;
+}
+.image-swap img:first-child {
+  display: block;
+}
+.image-swap img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.image-swap:hover img:last-child {
+  opacity: 1;
+}
+
+/*
+#19 Sliding Text on Hover
+Text smoothly slides in when hovered over.
+*/
+.slide-text {
+  overflow: hidden;
+}
+.slide-text span {
+  display: inline-block;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.slide-text:hover span {
+  transform: translateX(0);
+}
+
+/*
+#20 Responsive Square Grid
+Maintains perfect square layout for image galleries.
+*/
+.square-grid > div {
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+}
+
+/*
+#21 Rotating Logo on Hover
+Rotates logos or icons when hovered.
+*/
+selector img:hover {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+
+/*
+#22 Animated Progress Bar
+Custom animated CSS progress bar for skills or stats.
+*/
+.progress-container {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.progress-bar {
+  width: 0;
+  height: 20px;
+  background: #f44336;
+  animation: fillProgress 3s forwards;
+}
+@keyframes fillProgress {
+  to { width: 80%; }
+}
+
+/*
+#23 Sticky Sidebar
+Makes any section or widget stick to the screen while scrolling.
+*/
+.sticky-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+/*
+#24 Diagonal Section Divider
+CSS-only diagonal divider between two Elementor sections.
+*/
+.diagonal-divider {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  background: #f44336;
+  height: 150px;
+}
+
+/*
+#25 Responsive Video Wrapper
+Maintains responsive aspect ratio for embedded videos.
+*/
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+#26 Blur on Hover
+Blurs the background of an image or container on hover.
+*/
+.blur-hover:hover {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+/*
+#27 CSS-Only Modal Popup
+Creates a modal popup without JavaScript.
+*/
+.modal-toggle {
+  display: none;
+}
+.modal-toggle:checked + .modal {
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/*
+#28 Vertical Text
+Displays text vertically for stylish sidebars or labels.
+*/
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+/*
+#29 Elastic Button
+Applies a bouncy elastic animation on button click.
+*/
+.elastic-button:active {
+  animation: elastic 0.5s;
+}
+@keyframes elastic {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25, 0.75); }
+  40% { transform: scale(0.75, 1.25); }
+  60% { transform: scale(1.15, 0.85); }
+  100% { transform: scale(1); }
+}
+
+/*
+#30 Marquee Scrolling Text
+CSS-only horizontal scrolling text like a ticker.
+*/
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
